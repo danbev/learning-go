@@ -9,7 +9,7 @@ Run the ```setenv.sh``` script which will setup the correct GOPATH.
 
 ### Building
 
-    go install github.com/danbev/bs
+    go install github.com/danbev/algo
 
 ### Testing
 
