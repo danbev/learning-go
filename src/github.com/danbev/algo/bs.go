@@ -13,5 +13,5 @@ func BinarySearch(arr []int, key int) int {
             return mid;
         }
     }
-    return -(low)
+    return -(low + 1)
 }
