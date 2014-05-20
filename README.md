@@ -15,6 +15,10 @@ Run the ```setenv.sh``` script which will setup the correct GOPATH.
 
     go test github.com/danbev/algo
 
+With additional logging:
+
+    go test -v github.com/danbev/algo
+
 
 
 

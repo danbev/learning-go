@@ -13,6 +13,7 @@ func TestBinarySearch(t *testing.T) {
     VerifySearch(arr, 6, 5, t)
     VerifySearch(arr, 7, -7, t)
     VerifySearch(arr, 8, -7, t)
+    VerifySearch(arr, 100, -7, t)
 
 }
 
