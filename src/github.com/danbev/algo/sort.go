@@ -1,6 +1,6 @@
 package algo
 
-func InsertionSort(arr []int) []int {
+func SelectionSort(arr []int) []int {
     var len int = len(arr)
     for i := 0 ; i < len; i++ {
         var min = i
