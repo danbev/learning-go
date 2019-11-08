@@ -46,6 +46,18 @@ $ ls -l -h hello
 $ export GOFLAGS="-ldflags=-compressdwarf=false"
 $ go build -gcflags '-N -l' -o hello hello.go
 ```
+```console
+$ lldb hello
+(lldb) br s -f hello.go --line 6                                                        Breakpoint 1: where = hello`main.main + 29, address = 0x000000000109957d
+(lldb) r
+(lldb) bt
+* thread #1, stop reason = step in
+  * frame #0: 0x0000000001092e4d hello`fmt.Println at print.go:274
+    frame #1: 0x00000000010995df hello`main.main at hello.go:6
+    frame #2: 0x000000000102aeee hello`runtime.main at proc.go:203
+    frame #3: 0x00000000010532f1 hello`runtime.goexit at asm_amd64.s:1357
+```
+
 
 
 
