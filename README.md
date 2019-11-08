@@ -48,9 +48,9 @@ $ go build -gcflags '-N -l' -o hello hello.go
 ```
 ```console
 $ lldb hello
-(lldb) br s -f hello.go --line 6                                                        Breakpoint 1: where = hello`main.main + 29, address = 0x000000000109957d
-(lldb) r
-(lldb) bt
+(lldb) br s -f hello.go --line 6
+  Breakpoint 1: where = hello`main.main + 29, address = 0x000000000109957d
+(lldb) r (lldb) bt
 * thread #1, stop reason = step in
   * frame #0: 0x0000000001092e4d hello`fmt.Println at print.go:274
     frame #1: 0x00000000010995df hello`main.main at hello.go:6
