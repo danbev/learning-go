@@ -59,5 +59,41 @@ $ lldb hello
 ```
 
 
+### Variables
+Go does not allow unused local variables which will result in a compiler
+error.
 
+```
+var msg string = "Hello"
+```
+If a variable is not initialized with will get a default value, for the example
+above this would be an empty string "".
 
+#### Short variable declaration
+```
+something := "bajja"
+```
+
+### Slices
+Are three field data structures:
+```
+addr
+length
+capacity
+```
+You can use `make` to create a slice:
+```go
+slice := make([]string, 3, 5)
+```
+```go
+slice := []string{"one", "two", "three"}
+```
+if you specify a value inside the [ ] operator, you’re creating an array. If
+you don’t specify a value, you’re creating a slice.
+
+A nil slice is created by declaring a slice without any initialization:
+```go
+var slice []int
+```
+They’re useful when you want to represent a slice that doesn’t exist, such as
+when an exception occurs in a function that returns a slice 
