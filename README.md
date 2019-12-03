@@ -26,7 +26,7 @@ ok  	command-line-arguments	0.005s
 
 Run all tests:
 ```console
-$ go test ./...
+$ go -v test ./...
 ok  	_/Users/danielbevenius/work/go/learning-go/cmd/hello	0.005s
 ok  	_/Users/danielbevenius/work/go/learning-go/pkg/algo	0.004s
 ```
