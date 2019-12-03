@@ -24,9 +24,14 @@ With additional logging:
 The `build` command invokes the compiler tool chain and will compile and link
 all the file listed on the command line. 
 ```console
-$ go build src/hello.go
+$ go build cmd/hello/hello.go
 ```
-This will create an executable named hello.
+This will create an executable named hello in the current directory. 
+.
+```console
+$ go install cmd/hello/hello.go
+```
+Will compile and copy the executable to `$GOPATH/bin`.
 
 Let's take a look at the libraries linked to our executable `hello` above.
 ```console
@@ -70,6 +75,36 @@ Access documentation for a package:
 $ go doc fmt
 ```
 
+### Project structure
+`cmd` will contains applications that can be executed. These will mostly
+use packages in the `pkg` directory.
+
+`pkg` contains library code that others can use (and used by the executables in
+the cmd directories.
+
+`internal` are not available to external project only internal to your project.
+
+`vendor` are for dependencies and should be managed and not committed. TODO:
+read up on modules.
+
+`api`: JSON schemas, protocol defs etc.
+
+`web`: static web assets
+
+`configs`: configuration templates or default configurations.
+
+
+Notice that there is no `src` directory which is correct.
+The toplevel directory, the one pointed to by `GOPATH` will have the following
+directorys:
+```
+/pkg
+/bin
+/src
+```
+
+
+
 
 ### Variables
 Go does not allow unused local variables which will result in a compiler
@@ -109,3 +144,4 @@ var slice []int
 ```
 They’re useful when you want to represent a slice that doesn’t exist, such as
 when an exception occurs in a function that returns a slice 
+
