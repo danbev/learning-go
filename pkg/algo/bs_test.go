@@ -1,11 +1,12 @@
-package main
+package algo_test
 
+import "learning-go/pkg/algo"
 import "testing"
 
 func TestBinarySearch(t *testing.T) {
     arr := [] int {1, 2, 3, 4, 5, 6}
 
-    VerifySearch(arr, 2, 0, t)
+    VerifySearch(arr, 1, 0, t)
     VerifySearch(arr, 2, 1, t)
     VerifySearch(arr, 3, 2, t)
     VerifySearch(arr, 4, 3, t)
@@ -18,7 +19,7 @@ func TestBinarySearch(t *testing.T) {
 }
 
 func VerifySearch(arr []int, key int, expected int, t *testing.T) {
-    var idx int = BinarySearch(arr, key)
+    var idx int = algo.BinarySearch(arr, key)
     if idx != expected {
         t.Error("For", key, "Expected", expected, "got", idx)
     }

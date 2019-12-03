@@ -19,6 +19,17 @@ With additional logging:
 
     go test -v github.com/danbev/algo
 
+```console
+$ go test cmd/hello/hello_test.go
+ok  	command-line-arguments	0.005s
+```
+
+Run all tests:
+```console
+$ go test ./...
+ok  	_/Users/danielbevenius/work/go/learning-go/cmd/hello	0.005s
+ok  	_/Users/danielbevenius/work/go/learning-go/pkg/algo	0.004s
+```
 
 ### Compiling
 The `build` command invokes the compiler tool chain and will compile and link
