@@ -59,6 +59,18 @@ $ lldb hello
 ```
 
 
+### Docs
+Install:
+```console
+$ go get golang.org/x/tools/cmd/godoc
+```
+
+Access documentation for a package:
+```console
+$ go doc fmt
+```
+
+
 ### Variables
 Go does not allow unused local variables which will result in a compiler
 error.
