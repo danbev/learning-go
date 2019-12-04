@@ -35,7 +35,9 @@ func main() {
 
 	fmt.Println(r)
 
-	pretty, err := json.MarshalIndent(r, "", "    ")
+	prefix := ""
+	indent := "    "
+	pretty, err := json.MarshalIndent(r, prefix, indent)
 	if err != nil {
 		log.Println("ERROR:", err)
 		return
