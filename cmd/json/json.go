@@ -9,10 +9,11 @@ import (
 
 type (
 	result struct {
-		UserId int `json:"userId"`
-		Id int `json:"id"`
+		UserId int `json:"userId"` 
+		Id int `json:"lower_case_id"`
 		Title string `json:"title"`
 		Competed bool `json:"content"`
+		Missing string `json:"missing,omitempty"`
 	}
 
 )
