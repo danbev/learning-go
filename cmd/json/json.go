@@ -9,6 +9,8 @@ import (
 
 type (
 	result struct {
+		// Notice that we are using go tags here which are used
+	        // by the json marshaller.
 		UserId int `json:"userId"` 
 		Id int `json:"lower_case_id"`
 		Title string `json:"title"`
