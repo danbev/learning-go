@@ -156,3 +156,29 @@ var slice []int
 They’re useful when you want to represent a slice that doesn’t exist, such as
 when an exception occurs in a function that returns a slice 
 
+
+### Modules
+Are a new feature in 1.11 and allows projects to be in directories outside
+of the GOPATH. 
+
+You can initialize a project to use modules using:
+```console
+$ go mod init github.com/danbev/learning-go
+```
+Now, there is no tool required to use modules, you can simply add imports
+to you source code files and then run build and go will get the dependency
+and update mod.go (which was created by init).
+
+You can also get specific versions of a dependency using go get:
+```console
+$ go get something@version
+
+List all the deps:
+```console
+$ go list -m all
+```
+
+Prune deps that are no longer used:
+```console
+$ go mod tidy
+```
