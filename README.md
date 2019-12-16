@@ -167,7 +167,7 @@ $ go mod init github.com/danbev/learning-go
 ```
 Now, there is no tool required to use modules, you can simply add imports
 to you source code files and then run build and go will get the dependency
-and update mod.go (which was created by init).
+and update go.mod (which was created by init).
 
 You can also get specific versions of a dependency using go get:
 ```console
