@@ -11,6 +11,20 @@ Run the ```setenv.sh``` script which will setup the correct GOPATH.
 
     go install github.com/danbev/algo
 
+### Updating go
+[Download](https://go.dev/doc/install#install) the version for you OS, and
+then remove the current installation:
+```
+$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.1.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf /home/danielbevenius/Downloads/go1.19.1.linux-amd64.tar.gz
+```
+Then update the $PATH environment variable to include `/usr/local/go` if it is
+not already included.
+```console
+$ go version
+go version go1.19.1 linux/amd64
+```
+
 ### Testing
 
     go test github.com/danbev/algo
