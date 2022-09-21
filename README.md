@@ -1,16 +1,6 @@
 ## Simple project for learning the Go language.
 My quest to become a Gopher.
 
-
-### Setup
-Run the ```setenv.sh``` script which will setup the correct GOPATH.
-
-    . ./setenv.sh
-
-### Building
-
-    go install github.com/danbev/algo
-
 ### Updating go
 [Download](https://go.dev/doc/install#install) the version for you OS, and
 then remove the current installation:
@@ -26,35 +16,25 @@ go version go1.19.1 linux/amd64
 ```
 
 ### Testing
-
-    go test github.com/danbev/algo
-
-With additional logging:
-
-    go test -v github.com/danbev/algo
-
 ```console
-$ go test cmd/hello/hello_test.go
-ok  	command-line-arguments	0.005s
+    go test src/hello_test.go
 ```
 
-Run all tests:
+With additional logging:
 ```console
-$ go -v test ./...
-ok  	_/Users/danielbevenius/work/go/learning-go/cmd/hello	0.005s
-ok  	_/Users/danielbevenius/work/go/learning-go/pkg/algo	0.004s
+    go test -v src/hello_test.go
 ```
 
 ### Compiling
 The `build` command invokes the compiler tool chain and will compile and link
 all the file listed on the command line. 
 ```console
-$ go build cmd/hello/hello.go
+$ go build src/hello.go
 ```
 This will create an executable named hello in the current directory. 
 .
 ```console
-$ go install cmd/hello/hello.go
+$ go install src/hello.go
 ```
 Will compile and copy the executable to `$GOPATH/bin`.
 
@@ -69,7 +49,6 @@ Size:
 $ ls -l -h hello
 -rwxr-xr-x  1 danielbevenius  staff   2.0M Nov  8 12:08 hello
 ```
-
 
 ### Debugging
 ```console
@@ -99,37 +78,6 @@ Access documentation for a package:
 ```console
 $ go doc fmt
 ```
-
-### Project structure
-`cmd` will contains applications that can be executed. These will mostly
-use packages in the `pkg` directory.
-
-`pkg` contains library code that others can use (and used by the executables in
-the cmd directories.
-
-`internal` are not available to external project only internal to your project.
-
-`vendor` are for dependencies and should be managed and not committed. TODO:
-read up on modules.
-
-`api`: JSON schemas, protocol defs etc.
-
-`web`: static web assets
-
-`configs`: configuration templates or default configurations.
-
-
-Notice that there is no `src` directory which is correct.
-The toplevel directory, the one pointed to by `GOPATH` will have the following
-directorys:
-```
-/pkg
-/bin
-/src
-```
-
-
-
 
 ### Variables
 Go does not allow unused local variables which will result in a compiler
