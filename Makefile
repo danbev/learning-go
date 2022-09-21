@@ -1,6 +1,6 @@
 
 out/%: src/%.go | out
-	go build -o $@ $<
+	go build -gcflags '-N -l' -o $@ $<
 
 out/%_test: src/%_test.go | out
 	go test -o $@ $<
