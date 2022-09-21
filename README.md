@@ -25,6 +25,7 @@ With additional logging:
     go test -v src/hello_test.go
 ```
 
+
 ### Compiling
 The `build` command invokes the compiler tool chain and will compile and link
 all the file listed on the command line. 
@@ -32,7 +33,13 @@ all the file listed on the command line.
 $ go build src/hello.go
 ```
 This will create an executable named hello in the current directory. 
-.
+There is a Makefile with targets to build/run and tests in the src directory
+using:
+```console
+$ make out/hello
+```
+
+### Installing a program
 ```console
 $ go install src/hello.go
 ```
